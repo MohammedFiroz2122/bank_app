@@ -1,0 +1,44 @@
+<div class="container col-md-12">
+    <div class="parent mt-5">
+        <div class="row right ">
+            <div class="col-md-6">
+                <h3 class="text-center mt-5">Welcome Back</h3>
+                <div class="text text-center mt-5">
+                    <p><strong>Stay Connected To Your Accounts 24/7</strong></p>
+                </div>
+                <div class="img">
+                    <img src="assets/images/login1.gif" alt="">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group col-md-6">
+
+                   
+
+                    <h1>Register Here</h1>
+                    
+                    <form [formGroup]="registerForm" (ngSubmit)="register()">
+                        <div class="mb-3">
+                            <input type="text" id="account" name="accno" formControlName="acno" placeholder="enter your accnt number"  class="form-control" >  
+                        </div>
+                        <p *ngIf="(this.registerForm.get('acno')?.touched || this.registerForm.get('acno')?.dirty) && this.registerForm.get('acno')?.errors" class="error mt-3 text-center text-danger">Invalid account Number</p>
+                        <div class="mb-3">
+                            <input type="password" name="pwd" id="pwd_login" formControlName="pswd" placeholder="enter your password" class="form-control" >  
+                        </div>
+                        <p *ngIf="(this.registerForm.get('pswd')?.touched || this.registerForm.get('pswd')?.dirty) && this.registerForm.get('pswd')?.errors" class="error mt-3 text-center text-danger">Login requires password</p>
+                        <div class="mb-3">
+                            <input type="text" name="uname" id="uname" formControlName="uname" placeholder="enter username" class="form-control" >  
+                        </div>
+                        <p *ngIf="(this.registerForm.get('uname')?.touched || this.registerForm.get('uname')?.dirty) && this.registerForm.get('uname')?.errors" class="error mt-3 text-center text-danger">Invalid username</p>
+                        
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-outline-success col-md-12">Register</button>
+                            
+                            <p class="mt-3">Already have an account? <a routerLink=''>Login</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

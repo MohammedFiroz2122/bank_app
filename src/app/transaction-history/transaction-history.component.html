@@ -1,0 +1,57 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light " style="background-color: rgb(228, 218, 218);">
+        <div class="container">
+            <a class="navbar-brand" href="#">A<strong><span style="color: coral;">B</span></strong>C Bank</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarSupportedContent">
+
+
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0  ">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" routerLink='/home'>Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+                </ul>
+
+
+                <button class="btn btn-danger ms-3">LogOut</button>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class="container mt-5">
+    <h3 class="text-center">Transaction History</h3>
+</div>
+
+<div class="container mt-5">
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th scope="col">Amount</th>
+                <th scope="col">Type</th>
+                <th scope="col">Status</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let t of transaction">
+                <th scope="row">{{t.amount}}</th>
+                <td> {{t.type}} </td>
+                <td class="text-success"><i class="far fa-check-circle"></i></td>
+            </tr>
+            
+        </tbody>
+    </table>
+</div>
